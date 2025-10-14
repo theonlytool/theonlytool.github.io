@@ -8,7 +8,7 @@
   "assignees": [
     "alex6dj"
   ],
-  "baseBranches": [
+  "baseBranchPatterns": [
     "develop"
   ],
   "timezone": "America/Montevideo",
@@ -41,11 +41,11 @@
       "matchManagers": [
         "npm"
       ],
-      "matchPackagePatterns": [
-        "*"
-      ],
       "groupName": "vue.js dependencies",
-      "groupSlug": "vue-deps"
+      "groupSlug": "vue-deps",
+      "matchPackageNames": [
+        "*"
+      ]
     }
   ]
 }
