@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Renovate config for Vue.js app — weekly updates to 'develop' branch",
+  "extends": [
+    "config:best-practices",
+    ":dependencyDashboard"
+  ],
+  "assignees": [
+    "alex6dj"
+  ],
+  "baseBranches": [
+    "develop"
+  ],
+  "timezone": "America/Montevideo",
+  "schedule": [
+    "before 4am on sunday"
+  ],
+  "major": {
+    "dependencyDashboardApproval": true,
+    "automerge": false
+  },
+  "minor": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  },
+  "pin": {
+    "automerge": true
+  },
+  "digest": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": false
+  },
+  "automergeType": "pr",
+  "packageRules": [
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "groupName": "vue.js dependencies",
+      "groupSlug": "vue-deps"
+    }
+  ]
+}
