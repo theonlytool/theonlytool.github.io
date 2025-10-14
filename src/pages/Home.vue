@@ -3,20 +3,20 @@ import {ref} from 'vue';
 
 const features = ref([
   {
-    icon: 'bi bi-speedometer2',
-    title: 'Fast Performance',
-    description: 'Experience lightning-fast performance with our optimized codebase.'
-  },
-  {
     icon: 'bi bi-tools',
     title: 'Powerful Tools',
     description: 'Access a wide range of tools to enhance your productivity.'
   },
   {
-    icon: 'bi bi-gear',
-    title: 'Easy Customization',
+    icon: 'bi bi-joystick',
+    title: 'Easy to use',
     description: 'Customize every aspect of the application to fit your needs.'
-  }
+  },
+  {
+    icon: 'bi bi-geo-alt',
+    title: 'All you need',
+    description: 'Everything you need is already in a single place'
+  },
 ]);
 </script>
 
