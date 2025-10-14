@@ -1,5 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue';
+import InfoCard from "@/components/InfoCard.vue";
 
 const features = ref([]);
 const technologies = ref([]);
@@ -40,13 +41,7 @@ onMounted(() => {
         <h2 class="text-center mb-5">Key Features</h2>
         <div class="row text-center">
           <div class="col-md-4 mb-4" v-for="feature in features" :key="feature.title">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <i :class="feature.icon" class="display-6 text-primary mb-3"></i>
-                <h5 class="card-title">{{ feature.title }}</h5>
-                <p class="card-text">{{ feature.description }}</p>
-              </div>
-            </div>
+            <InfoCard :icon="feature.icon" :title="feature.title" :description="feature.description" />
           </div>
         </div>
       </div>
@@ -58,13 +53,7 @@ onMounted(() => {
         <h2 class="text-center mb-5">Technologies Used</h2>
         <div class="row text-center">
           <div class="col-md-4 mb-4" v-for="tech in technologies" :key="tech.title">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <i :class="tech.icon" class="display-6 text-primary mb-3"></i>
-                <h5 class="card-title">{{ tech.title }}</h5>
-                <p class="card-text">{{ tech.description }}</p>
-              </div>
-            </div>
+            <InfoCard :icon="tech.icon" :title="tech.title" :description="tech.description" />
           </div>
         </div>
       </div>
@@ -109,15 +98,6 @@ onMounted(() => {
 
 .creator-section {
   background-color: #ffffff;
-}
-
-.card {
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 img {

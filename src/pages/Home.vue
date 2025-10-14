@@ -1,5 +1,6 @@
 <script setup>
 import {ref, onMounted} from 'vue';
+import InfoCard from "@/components/InfoCard.vue";
 
 const features = ref([]);
 
@@ -28,13 +29,7 @@ onMounted(() => {
       <div class="container">
         <div class="row text-center">
           <div class="col-md-4 mb-4" v-for="feature in features" :key="feature.title">
-            <div class="card h-100 shadow-sm">
-              <div class="card-body">
-                <i :class="feature.icon" class="display-6 text-primary mb-3"></i>
-                <h5 class="card-title">{{ feature.title }}</h5>
-                <p class="card-text">{{ feature.description }}</p>
-              </div>
-            </div>
+            <InfoCard :icon="feature.icon" :title="feature.title" :description="feature.description" />
           </div>
         </div>
       </div>
@@ -68,14 +63,5 @@ onMounted(() => {
 .cta-section {
   background-color: #007bff;
   color: white;
-}
-
-.card {
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 </style>
