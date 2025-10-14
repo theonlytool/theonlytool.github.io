@@ -52,7 +52,7 @@ const features = ref([
     <section class="cta-section py-5 text-center bg-primary text-white">
       <div class="container">
         <h2 class="mb-4">Ready to Get Started?</h2>
-        <p class="lead mb-4">Join thousands of users who have improved their productivity with TheOnlyTool</p>
+        <p class="lead mb-4">Join developers and users worldwide who enhance their productivity with TheOnlyTool</p>
         <a href="/tools" class="btn btn-light btn-lg">Explore Tools</a>
       </div>
     </section>
