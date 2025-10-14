@@ -1,15 +1,15 @@
 <script setup>
 import {ref, onMounted} from 'vue';
-import InfoCard from "@/components/InfoCard.vue";
+import InfoCardContainer from "@/components/InfoCardContainer.vue";
 
 const features = ref([]);
 
 onMounted(() => {
   fetch('/data/features.json')
-    .then(response => response.json())
-    .then(data => {
-      features.value = data;
-    });
+      .then(response => response.json())
+      .then(data => {
+        features.value = data;
+      });
 });
 </script>
 
@@ -26,13 +26,7 @@ onMounted(() => {
 
     <!-- Features Section -->
     <section id="features" class="features-section py-5">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-4 mb-4" v-for="feature in features" :key="feature.title">
-            <InfoCard :icon="feature.icon" :title="feature.title" :description="feature.description" />
-          </div>
-        </div>
-      </div>
+      <InfoCardContainer title="Key Features" :items="features"/>
     </section>
 
     <!-- Call to Action Section -->
