@@ -1,23 +1,10 @@
 <script setup>
-import {ref, onMounted} from 'vue';
 import InfoCardContainer from "@/components/InfoCardContainer.vue";
+import {useFeatures} from "@/composables/useFeatures.js";
+import {useTechnologies} from "@/composables/useTechnologies.js";
 
-const features = ref([]);
-const technologies = ref([]);
-
-onMounted(() => {
-  fetch('/data/features.json')
-      .then(response => response.json())
-      .then(data => {
-        features.value = data;
-      });
-
-  fetch('/data/technologies.json')
-      .then(response => response.json())
-      .then(data => {
-        technologies.value = data;
-      });
-});
+const {features, featuresIsLoading, featuresError} = useFeatures();
+const {technologies, technologiesIsLoading, technologiesError} = useTechnologies();
 </script>
 
 <template>
@@ -38,12 +25,20 @@ onMounted(() => {
 
     <!-- Features Section -->
     <section class="features-section py-5">
-      <InfoCardContainer title="Key Features" :items="features"/>
+      <InfoCardContainer v-if="!featuresIsLoading" title="Key Features" :items="features"/>
+      <p class="text-center" v-else>
+        <span class="loader"></span>
+      </p>
+      <p v-if="featuresError">Error loading features: {{ featuresError.message }}</p>
     </section>
 
     <!-- Technologies Section -->
     <section class="technologies-section py-5">
-      <InfoCardContainer title="Technologies Used" :items="technologies"/>
+      <InfoCardContainer v-if="!technologiesIsLoading" title="Technologies Used" :items="technologies"/>
+      <p class="text-center" v-else>
+        <span class="loader"></span>
+      </p>
+      <p v-if="technologiesError">Error loading features: {{ technologiesError.message }}</p>
     </section>
 
     <!-- About Creator Section -->
@@ -92,5 +87,25 @@ onMounted(() => {
 
 img {
   border-radius: 10px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

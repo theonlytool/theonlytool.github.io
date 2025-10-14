@@ -1,16 +1,8 @@
 <script setup>
-import {ref, onMounted} from 'vue';
 import InfoCardContainer from "@/components/InfoCardContainer.vue";
+import {useFeatures} from "@/composables/useFeatures.js";
 
-const features = ref([]);
-
-onMounted(() => {
-  fetch('/data/features.json')
-      .then(response => response.json())
-      .then(data => {
-        features.value = data;
-      });
-});
+const {features, isLoading, error} = useFeatures()
 </script>
 
 <template>
@@ -26,7 +18,11 @@ onMounted(() => {
 
     <!-- Features Section -->
     <section id="features" class="features-section py-5">
-      <InfoCardContainer title="Key Features" :items="features"/>
+      <InfoCardContainer v-if="!isLoading" title="Key Features" :items="features"/>
+      <p class="text-center" v-else>
+        <span class="loader"></span>
+      </p>
+      <p v-if="error">Error loading features: {{ error.message }}</p>
     </section>
 
     <!-- Call to Action Section -->
@@ -57,5 +53,25 @@ onMounted(() => {
 .cta-section {
   background-color: #007bff;
   color: white;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
