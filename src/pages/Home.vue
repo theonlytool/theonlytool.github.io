@@ -1,23 +1,15 @@
 <script setup>
-import {ref} from 'vue';
+import {ref, onMounted} from 'vue';
 
-const features = ref([
-  {
-    icon: 'bi bi-tools',
-    title: 'Powerful Tools',
-    description: 'Access a wide range of tools to enhance your productivity.'
-  },
-  {
-    icon: 'bi bi-joystick',
-    title: 'Easy to use',
-    description: 'Customize every aspect of the application to fit your needs.'
-  },
-  {
-    icon: 'bi bi-geo-alt',
-    title: 'All you need',
-    description: 'Everything you need is already in a single place'
-  },
-]);
+const features = ref([]);
+
+onMounted(() => {
+  fetch('/data/features.json')
+    .then(response => response.json())
+    .then(data => {
+      features.value = data;
+    });
+});
 </script>
 
 <template>
