@@ -20,7 +20,7 @@ const router = createRouter({
             component: () => import('../pages/Tools.vue'),
         },
     ],
-    linkActiveClass: 'active',
+    linkActiveClass: 'active text-decoration-underline',
 })
 
 export default router
