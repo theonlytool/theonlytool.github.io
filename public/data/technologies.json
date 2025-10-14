@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "bi bi-code-slash",
+    "title": "Vue.js",
+    "description": "Progressive JavaScript framework for building user interfaces."
+  },
+  {
+    "icon": "bi bi-bootstrap",
+    "title": "Bootstrap",
+    "description": "Popular CSS framework for responsive design."
+  },
+  {
+    "icon": "bi bi-github",
+    "title": "GitHub",
+    "description": "Version control and collaboration platform."
+  }
+]
