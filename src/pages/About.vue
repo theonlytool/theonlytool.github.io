@@ -71,7 +71,7 @@ const technologies = [
         <div class="row">
           <div class="col-md-4 text-center">
             <img src="https://avatars.githubusercontent.com/u/27690651?v=4" alt="Creator Avatar" class="rounded-circle"
-                 style="width: 150px; height: 150px;">
+                 style="width: 150px; height: 150px;" loading="lazy">
           </div>
           <div class="col-md-8">
             <h3>Alex6dj</h3>
