@@ -1,10 +1,41 @@
 <script setup>
 import InfoCardContainer from "@/components/InfoCardContainer.vue";
-import {useFeatures} from "@/composables/useFeatures.js";
-import {useTechnologies} from "@/composables/useTechnologies.js";
 
-const {features, featuresIsLoading, featuresError} = useFeatures();
-const {technologies, technologiesIsLoading, technologiesError} = useTechnologies();
+const features = [
+  {
+    "icon": "bi bi-tools",
+    "title": "Powerful Tools",
+    "description": "Access a wide range of tools to enhance your productivity."
+  },
+  {
+    "icon": "bi bi-joystick",
+    "title": "Easy to use",
+    "description": "Customize every aspect of the application to fit your needs."
+  },
+  {
+    "icon": "bi bi-geo-alt",
+    "title": "Everything you need",
+    "description": "Everything you need is already in a single place"
+  }
+];
+
+const technologies = [
+  {
+    "icon": "bi bi-code-slash",
+    "title": "Vue.js",
+    "description": "Progressive JavaScript framework for building user interfaces."
+  },
+  {
+    "icon": "bi bi-bootstrap",
+    "title": "Bootstrap",
+    "description": "Popular CSS framework for responsive design."
+  },
+  {
+    "icon": "bi bi-github",
+    "title": "GitHub",
+    "description": "Version control and collaboration platform."
+  }
+];
 </script>
 
 <template>
@@ -25,20 +56,12 @@ const {technologies, technologiesIsLoading, technologiesError} = useTechnologies
 
     <!-- Features Section -->
     <section class="features-section py-5">
-      <InfoCardContainer v-if="!featuresIsLoading" title="Key Features" :items="features"/>
-      <p class="text-center" v-else>
-        <span class="loader"></span>
-      </p>
-      <p v-if="featuresError">Error loading features: {{ featuresError.message }}</p>
+      <InfoCardContainer title="Key Features" :items="features"/>
     </section>
 
     <!-- Technologies Section -->
     <section class="technologies-section py-5">
-      <InfoCardContainer v-if="!technologiesIsLoading" title="Technologies Used" :items="technologies"/>
-      <p class="text-center" v-else>
-        <span class="loader"></span>
-      </p>
-      <p v-if="technologiesError">Error loading features: {{ technologiesError.message }}</p>
+      <InfoCardContainer title="Technologies Used" :items="technologies"/>
     </section>
 
     <!-- About Creator Section -->
@@ -87,25 +110,5 @@ const {technologies, technologiesIsLoading, technologiesError} = useTechnologies
 
 img {
   border-radius: 10px;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: #FF3D00;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>

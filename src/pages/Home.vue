@@ -1,8 +1,23 @@
 <script setup>
 import InfoCardContainer from "@/components/InfoCardContainer.vue";
-import {useFeatures} from "@/composables/useFeatures.js";
 
-const {features, isLoading, error} = useFeatures()
+const features = [
+  {
+    "icon": "bi bi-tools",
+    "title": "Powerful Tools",
+    "description": "Access a wide range of tools to enhance your productivity."
+  },
+  {
+    "icon": "bi bi-joystick",
+    "title": "Easy to use",
+    "description": "Customize every aspect of the application to fit your needs."
+  },
+  {
+    "icon": "bi bi-geo-alt",
+    "title": "Everything you need",
+    "description": "Everything you need is already in a single place"
+  }
+];
 </script>
 
 <template>
@@ -18,11 +33,7 @@ const {features, isLoading, error} = useFeatures()
 
     <!-- Features Section -->
     <section id="features" class="features-section py-5">
-      <InfoCardContainer v-if="!isLoading" title="Key Features" :items="features"/>
-      <p class="text-center" v-else>
-        <span class="loader"></span>
-      </p>
-      <p v-if="error">Error loading features: {{ error.message }}</p>
+      <InfoCardContainer title="Key Features" :items="features"/>
     </section>
 
     <!-- Call to Action Section -->
@@ -53,25 +64,5 @@ const {features, isLoading, error} = useFeatures()
 .cta-section {
   background-color: #007bff;
   color: white;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: #FF3D00;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>
