@@ -1,5 +1,4 @@
 <script setup>
-import {defineProps} from 'vue';
 import InfoCard from './InfoCard.vue';
 
 defineProps({
