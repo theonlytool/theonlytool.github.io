@@ -1,38 +1,50 @@
 # TheOnlyTool
 
-This template should help get you started developing with Vue 3 in Vite.
+TheOnlyTool is a web application designed to provide a collection of useful tools for my
+daily tasks. This application is deployed using GitHub and Cloudflare Pages, making it easily accessible from anywhere.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+TheOnlyTool offers a variety of tools to simplify your daily tasks:
 
-## Recommended Browser Setup
+- [ ] **Hashing**: Generate hashes using various algorithms.
+- [ ] **URL Encoding/Decoding**: Encode url path.
+- [ ] **Base64 Encoding/Decoding**: Encode and decode data using Base64.
+- [ ] **Color Converter/Selector**: Convert colors between different formats and select colors easily.
+- [ ] **QR Generator**: Generate QR codes for various purposes.
+- [ ] **UUID Generator**: Generate unique identifiers (UUIDs).
+- [ ] **Random Numbers/Characters Generator**: Generate random numbers and characters, useful for passwords.
+- [ ] **Text Tools**: For change capitalization, and text counting.
+- [ ] **CSV Toolbox**: Open, Edit and Save CSV files.
+- [ ] **JWT Inspector**: An easy way to decode a JWT Token
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Accessing TheOnlyTool
 
-## Customize configuration
+You can access TheOnlyTool directly from the following URL:
+[https://theonlytool.pages.dev/](https://theonlytool.pages.dev/)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Technologies Used
 
-## Project Setup
+- **Vue.js**: Progressive JavaScript framework for building user interfaces.
+- **Bootstrap**: Popular CSS framework for responsive design.
+- **GitHub**: Version control and collaboration platform.
+- **Cloudflare Pages**: Fast and secure deployment platform.
 
-```sh
-npm install
-```
+## Contributing
 
-### Compile and Hot-Reload for Development
+While TheOnlyTool is already deployed and doesn't require local installation, we welcome contributions to improve and
+expand its functionality. If you'd like to contribute, please follow these guidelines:
 
-```sh
-npm run dev
-```
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive messages.
+4. Push your branch to your fork.
+5. Create a pull request to the main repository.
 
-### Compile and Minify for Production
+## Badges
 
-```sh
-npm run build
-```
+![Alt](https://repobeats.axiom.co/api/embed/fbf9c78e35c6a73984878f50525a777bc819f24b.svg "Repobeats analytics image")
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
