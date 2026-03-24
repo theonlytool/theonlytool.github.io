@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 </script>
 
 <template>
@@ -9,6 +9,7 @@
       <div class="mt-2">
         <strong>Stack Used: </strong>
         <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue.js</a> |
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a> |
         <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a>
       </div>
       <div class="mt-2">
