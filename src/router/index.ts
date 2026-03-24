@@ -12,12 +12,12 @@ const router = createRouter({
         {
             path: '/about',
             name: 'about',
-            component: () => import('../pages/About.vue'),
+            component: () => import('@/pages/About.vue'),
         },
         {
             path: '/tools',
             name: 'tools',
-            component: () => import('../pages/Tools.vue'),
+            component: () => import('@/pages/Tools.vue'),
         },
     ],
     linkActiveClass: 'active text-decoration-underline',

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import InfoCardContainer from "@/components/InfoCardContainer.vue";
 
 const features = [

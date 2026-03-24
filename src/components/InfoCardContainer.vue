@@ -1,19 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import InfoCard from './InfoCard.vue';
 
-defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  items: {
-    type: Array,
-    required: true,
-    validator: (items) => {
-      return items.every(item => 'icon' in item && 'title' in item && 'description' in item);
-    }
-  }
-});
+interface Item {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  items: Item[];
+}
+
+defineProps<Props>();
 </script>
 
 <template>

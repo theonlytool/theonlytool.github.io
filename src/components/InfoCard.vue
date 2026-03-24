@@ -1,18 +1,11 @@
-<script setup>
-defineProps({
-  icon: {
-    type: String,
-    required: true
-  },
-  title: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  }
-});
+<script setup lang="ts">
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+defineProps<Props>();
 </script>
 
 <template>
